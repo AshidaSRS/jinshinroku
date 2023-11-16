@@ -1,0 +1,6 @@
+DO $$
+BEGIN
+    DROP SCHEMA IF EXISTS psy CASCADE;
+END
+$$;
+

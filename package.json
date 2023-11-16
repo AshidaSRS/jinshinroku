@@ -1,0 +1,51 @@
+{
+  "name": "jinshinroku",
+  "version": "1.0.0",
+  "description": "Auto-registry psychologic",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "npm run clean && npm run build",
+    "check:packages:version": "npx npm-check-updates -u",
+    "test": "jest",
+    "test:dev": "npm run compile && jest",
+    "build": "tsc --build",
+    "build:dev": "tsc-watch --build",
+    "lint": "eslint -c eslintrc.js .",
+    "lint:fix": "eslint -c eslintrc.js . --fix",
+    "lint:errors": "eslint --quiet -c eslintrc.js .",
+    "start:prod": "node -r dotenv/config dist/app/start",
+    "start:dev": "npm run clean && tsc-watch --build --onSuccess 'node --require dotenv/config dist/src/app/index.js'",
+    "start": "node --require dotenv/config dist/src/app/index.js",
+    "db:local:up": "db-migrate up --migrations-dir './db/migrations' --config './db/database.json'",
+    "db:local:down": "db-migrate down --migrations-dir './db/migrations' --config './db/database.json'",
+    "db:local:reapply": "npm run db:local:down && npm run db:local:up",
+    "db:migration:create": "db-migrate create $migration_name --sql-file --migrations-dir './db/migrations' --config './db/database.json'",
+    "husky:install": "npx husky install",
+    "reinstall:libs": "rm -rf node_modules package-lock.json && npm i"
+  },
+  "keywords": [],
+  "author": "ashida",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/decimal.js": "^7.4.0",
+    "@types/node": "~20.9.0",
+    "@types/uuid": "^9.0.7",
+    "dotenv": "^16.3.1",
+    "prettier": "3.1.0",
+    "tsc-watch": "^6.0.4",
+    "typescript": "~5.2.2"
+  },
+  "dependencies": {
+    "@types/db-migrate-pg": "^0.0.13",
+    "@types/winston": "^2.4.4",
+    "db-migrate": "^0.11.14",
+    "db-migrate-pg": "^1.5.2",
+    "decimal.js": "^10.4.3",
+    "myzod": "~1.10.2",
+    "postgres": "^3.4.3",
+    "puregram": "~2.20.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  }
+}

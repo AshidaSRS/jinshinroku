@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2018",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "paths": {
+      "*": ["node_modules/*"]
+    },
+    "noImplicitAny": false,
+    "lib": ["ES2018", "dom", "ES2021.String"],
+    "skipLibCheck": true
+  }
+}

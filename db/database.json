@@ -1,0 +1,11 @@
+{
+  "pg": {
+    "driver": "pg",
+    "user": "ashida",
+    "password": "ashida",
+    "host": "localhost",
+    "database": "jinshinroku",
+    "port": "5432"
+  },
+  "defaultEnv": "pg"
+}

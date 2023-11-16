@@ -1,0 +1,11 @@
+/node_modules
+/scripts
+/logs
+/infrastructure
+/db
+/dist
+/error-manager
+
+__mocks__
+__tests__
+**/*.js
